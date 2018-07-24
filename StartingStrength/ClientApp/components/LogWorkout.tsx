@@ -16,11 +16,11 @@ enum WorkoutState {
     Set3Reps
 }
 enum Exercise {
-    Squat,
-    Press,
-    Bench,
-    Row,
-    Deadlift
+    Squat = "Squat",
+    Press = "Press",
+    Bench = "Bench Press",
+    Row = "Row",
+    Deadlift = "Deadlift"
 }
 
 export class LogWorkout extends React.Component<RouteComponentProps<{}>, Workout> {
@@ -180,10 +180,8 @@ export class LogWorkout extends React.Component<RouteComponentProps<{}>, Workout
                     Weight: this.state.weight,
                     Reps: this.state.reps
                 })
-            })
-            .then(response => {
-                this.clearModel();
             });
+        this.clearModel();
     }
 
     clearModel() {

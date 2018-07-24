@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StartingStrength.Data;
 
 namespace StartingStrength
 {
@@ -23,6 +24,7 @@ namespace StartingStrength
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<IDataStore, DataStore>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
