@@ -122,24 +122,21 @@ export class LogWorkout extends React.Component<RouteComponentProps<{}>, Workout
     }
 
     handleWeightChange = (e: React.FormEvent<HTMLInputElement>) => {
-        console.log(e.currentTarget.value);
         this.setState({ weight: Number(e.currentTarget.value) });
     }
 
     renderWeightInput(): any {
         return <div>
             {this.renderPageTitle()}
-            <form className="form form-inline">
-                <label>Weight (KG):
-                    <input
-                        className="form-control"
-                        name="weight"
-                        type="text"
-                        value={this.state.weight}
-                        onChange={this.handleWeightChange} />
-                </label>
-            </form>
-            <button className="btn form-control btn-lg btn-block" onClick={() => { this.setState({ workoutState: WorkoutState.Set1Reps }) }}>Next</button>
+            <label>Weight (Kg):</label>
+                <input
+                    className="form-control input-lg"
+                    name="weight"
+                    type="number"
+                    value={this.state.weight}
+                onChange={this.handleWeightChange} />
+            <br/>
+            <button className="btn btn-lg btn-info btn-block" onClick={() => { this.setState({ workoutState: WorkoutState.Set1Reps }) }}>Next</button>
         </div>;
     }
 
