@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.WindowsAzure.Storage.Blob.Protocol;
+using StartingStrength.Data;
 
 namespace StartingStrength.Controllers
 {
@@ -11,17 +12,10 @@ namespace StartingStrength.Controllers
     public class WorkoutController : Controller
     {
         [HttpPost("[action]")]
-        public ActionResult Log([FromBody]LogData data)
+        public ActionResult Log([FromBody]Workout workout)
         {
 
             return Ok();
         }
-    }
-
-    public class LogData
-    {
-        public string Exercise { get; set; }
-        public decimal Weight { get; set; }
-        public int[] Reps { get; set; }
     }
 }
